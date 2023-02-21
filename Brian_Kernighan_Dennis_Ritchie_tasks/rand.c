@@ -1,20 +1,24 @@
+// Генератор псевдослучайных чисел
 #include <stdio.h>
-
 unsigned long int next = 1;
-int rand(void) /* rand: возвращает псевдослучайное целое 0...32767 */
-{
-    next = next * 1103515245 + 12345;
 
-    return (unsigned int) (next / 65536) % 32768;
-}
-void strand(unsigned int seed) // устанавливает сид для rand()
+/* rand: возвращает псевдослучайное целое 0...32767 */
+int rand(void)
 {
-    next = seed;
+ next = next * 1103515245 + 12345;
+ return (unsigned int)(next/65536) % 32768;
+}
+
+/* srand: устанавливает "семя" для rand() */
+void srand(unsigned int seed)
+{
+ next = seed;
 }
 
 int main()
 {
-    strand(7202);
+    srand(166);
     printf("%d",rand());
+
     return 0;
 }
