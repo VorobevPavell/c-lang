@@ -34,7 +34,7 @@ int main()
     for(int i = 0; i < LEN; printf(" %d ",ndigit[i++]))
         ;
     printf (", символов-разделителей = %d, прочих = %d\n", nwhite, nother);
-    return 0;
+
 
     return 0;
 }
